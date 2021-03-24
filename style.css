@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*--MAINE PAGE--*/
+
+body#main_page {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-size: cover;
+    background-image: url(https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all);
+}
+
+#main_page h1 {
+    position: relative;
+    top: 50px;
+    color: red;
+    font-size: 50px;
+    text-align: center;
+}
+#main_page h1 span {
+    color: black;
+}
+
+#main_page ul {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding-top: 12px;
+    height: 50px;
+    overflow: hidden;
+}
+
+#main_page li {
+    padding-right: 10px;
+    display: inline-block;
+
+}
+
+#main_page li a {
+    text-decoration: none;
+    color: #ffffff;
+    background-color: red;
+    border-radius: 15px;
+    border: 2px solid red;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+#main_page li:hover a {
+    text-decoration: none;
+    color: #000000;
+    background-color: rgb(255, 255, 255);
+    transition-duration: .8s;
+}
+
+
+
