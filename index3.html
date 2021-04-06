@@ -4,55 +4,147 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <title>Document</title>
     
-    <style>
-        *
-        {
-            padding: 0;
-            margin: 0;
-        }
-    </style>
 </head>
-<body>
+<body onload="loadClient()">
 
     <script src="https://apis.google.com/js/api.js"></script>
-<script>
-  /**
-   * Sample JavaScript code for youtube.channels.list
-   * See instructions for running APIs Explorer code samples locally:
-   * https://developers.google.com/explorer-help/guides/code_samples#javascript
-   */
-
-  function authenticate() {
-    return gapi.auth2.getAuthInstance()
-        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
-        .then(function() { console.log("Sign-in successful"); },
-              function(err) { console.error("Error signing in", err); });
-  }
-  function loadClient() {
-    gapi.client.setApiKey("AIzaSyDNTcpVfVk5LYojl59rvy_1xcTGjMIAMKU");
-    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-        .then(function() { console.log("GAPI client loaded for API"); },
-              function(err) { console.error("Error loading GAPI client for API", err); });
-  }
-  // Make sure the client is loaded and sign-in is complete before calling this method.
-  function execute() {
-    return gapi.client.youtube.channels.list({})
-        .then(function(response) {
-                // Handle the results here (response.result has the parsed body).
-                console.log("Response", response);
-              },
-              function(err) { console.error("Execute error", err); });
-  }
-  gapi.load("client:auth2", function() {
-    gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
-  });
-</script>
-<button onclick="authenticate().then(loadClient)">authorize and load</button>
-<button onclick="execute()">execute</button>
-
+    <script>
      
+      function loadClient() {
+        gapi.client.setApiKey("AIzaSyDNTcpVfVk5LYojl59rvy_1xcTGjMIAMKU");
+        return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+            .then(function() { console.log("GAPI client loaded for API"); },
+                  function(err) { console.error("Error loading GAPI client for API", err); });
+      }
+      // Make sure the client is loaded and sign-in is complete before calling this method.
+      function execute() {
+        
+        /*
+        
+        let json = JSON.stringify(gapi.client.youtube.channels.list({
+          "part": [
+            "snippet,contentDetails,statistics"
+          ],
+          "id": [
+            "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+          ]
+        }));
+        
+        console.log(json);
+        */
+        return gapi.client.youtube.channels.list({
+          "part": [
+            "snippet,contentDetails,statistics"
+          ],
+          "id": [
+            "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+          ]
+        })
+
+        .then(function(response) {
+                let post = 
+                {
+                    title: response.result.items[0].snippet.title,
+                    date: response.result.items[0].snippet.publishedAt,
+                    subscriber: response.result.items[0].statistics.subscriberCount,
+                    video: response.result.items[0].snippet.videoCount,
+                    view: response.result.items[0].snippet.viewCount
+                }
+                console.log(post);
+                console.log(post.title);
+                Title(post.title);
+                DateCreate(post.date);
+                Subscriber(post.subscriber);
+                Video(post.video);
+                View(post.view);
+                let json = JSON.stringify(post);
+                console.log(json);
+                let title = JSON.parse(json);
+                    // Handle the results here (response.result has the parsed body).
+                    console.log("Response", response);
+                  },
+                  function(err) { console.error("Execute error", err); });
+      }
+      gapi.load("client:auth2", function() {
+        gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+      });
+
+      function Title(name)
+      {
+          let title = document.getElementById("name_chanel");
+          console.log(title);
+            title.innerHTML = name;
+      }
+      function DateCreate(name)
+      {
+          let date = document.getElementById("date_of_create");
+          console.log(date);
+          date.innerHTML = name;
+      }
+      function Subscriber(name)
+      {
+          let subscriber = document.getElementById("number_of_followers");
+          console.log(subscriber);
+          subscriber.innerHTML = name;
+      }
+      function Video(name)
+      {
+          let video = document.getElementById("number_all_video");
+          console.log(video);
+          video.innerHTML = name;
+      }
+      function View(name)
+      {
+          let view = document.getElementById("number_of_views");
+          console.log(view);
+          view.innerHTML = name;
+      }
+    </script>
+    <button onclick="execute()">execute</button>
+    <table id="infoTable"> 
+        <caption>Інформація про канал</caption>
+        <tr>
+            <th>
+                Ім'я каналу
+            </th>
+            <th>
+                Дата створення
+            </th>
+            <th>
+               Кількість підписників
+            </th>
+
+            <th>
+                Кількість відео на каналі
+            </th>
+
+            <th>
+                Кількість переглядів
+            </th>
+        </tr>
+        <tr>
+            <td id="name_chanel">
+                
+            </td>
+            <td id="date_of_create">
+                
+            </td>
+            <td id="number_of_followers">
+               
+            </td>
+            <td id="number_all_video">
+                
+            </td>
+            <td id="number_of_views">
+                
+            </td>
+        </tr>
+    </table>
+    <br><br><br>
+    <a href="index2.html" class="links">Повернутися на попереднє меню</a>
     <!--<form id="addForm" onsubmit="SendJSON(this);" method="post">
         <button >
 
@@ -71,9 +163,7 @@
                 <th>
                    Кількість підписників
                 </th>
-                <th>
-                   Кількість підписників
-                </th>
+
                 <th>
                     Кількість відео на каналі
                 </th>
