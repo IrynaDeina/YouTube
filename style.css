@@ -71,3 +71,49 @@ body#main_page {
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
+.main
+{
+  font-family: 'Dela Gothic One', cursive;
+  height: 600px;
+  width: 700px;
+  margin: auto;
+  background-color: transparent;
+}
+img.analytics
+{
+  height: 200px;
+}
+span.logo
+{
+  color: red;
+  font-weight: bold;
+  font-size: 2.5em;
+  position: absolute;
+  top: 100px;
+}
+ul.info
+{
+  padding-left: 200px;
+}
+ul.info li
+{
+  list-style-type: none;
+ margin-bottom: 20px;
+}
+ul.info li a
+{
+  text-decoration: none;
+  color: black;
+ 
+}
+ul.info li a:hover
+{
+ 
+  color: red;
+}
+p.choose
+{
+  font-weight: bold;
+  color: brown;
+  padding-left: 300px;
+}
