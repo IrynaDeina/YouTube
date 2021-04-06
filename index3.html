@@ -35,12 +35,15 @@
         
         console.log(json);
         */
+       let id = document.getElementById("channelID");
+        console.log(id.value);
+        //UClI9aidW3X044NeB4QS-yxw
         return gapi.client.youtube.channels.list({
           "part": [
             "snippet,contentDetails,statistics"
           ],
           "id": [
-            "UC_x5XG1OV2P6uZZ5FSM9Ttw"
+            id.value
           ]
         })
 
@@ -103,7 +106,14 @@
           view.innerHTML = name;
       }
     </script>
-    <button onclick="execute()">execute</button>
+    
+    <div>
+        <span>
+            Введіть ID каналу
+        </span>
+        <input type="text" id="channelID">
+        <button onclick="execute()">Показати</button>
+    </div>
     <table id="infoTable"> 
         <caption>Інформація про канал</caption>
         <tr>
