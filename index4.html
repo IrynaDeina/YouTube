@@ -13,31 +13,20 @@
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
      
-      function loadClient() {
+    function loadClient()
+    {
         gapi.client.setApiKey("AIzaSyDNTcpVfVk5LYojl59rvy_1xcTGjMIAMKU");
         return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
             .then(function() { console.log("GAPI client loaded for API"); },
                   function(err) { console.error("Error loading GAPI client for API", err); });
-      }
-      // Make sure the client is loaded and sign-in is complete before calling this method.
-      function execute() {
+    }
+
+    function execute()
+    {
         
-        /*
-        
-        let json = JSON.stringify(gapi.client.youtube.channels.list({
-          "part": [
-            "snippet,contentDetails,statistics"
-          ],
-          "id": [
-            "UC_x5XG1OV2P6uZZ5FSM9Ttw"
-          ]
-        }));
-        
-        console.log(json);
-        */
        let id = document.getElementById("channelID");
         console.log(id.value);
-        //UClI9aidW3X044NeB4QS-yxw
+        //id for example UClI9aidW3X044NeB4QS-yxw
         return gapi.client.youtube.channels.list({
           "part": [
             "snippet,contentDetails,statistics"
@@ -47,30 +36,27 @@
           ]
         })
 
-        .then(function(response) {
+        .then(function(response)
+        {
                 let post = 
                 {
                     title: response.result.items[0].snippet.title,
                     date: response.result.items[0].snippet.publishedAt,
                     subscriber: response.result.items[0].statistics.subscriberCount,
-                    video: response.result.items[0].snippet.videoCount,
-                    view: response.result.items[0].snippet.viewCount
+                    video: response.result.items[0].statistics.videoCount,
+                    view: response.result.items[0].statistics.viewCount
                 }
-                console.log(post);
-                console.log(post.title);
+                
                 Title(post.title);
                 DateCreate(post.date);
                 Subscriber(post.subscriber);
                 Video(post.video);
                 View(post.view);
-                let json = JSON.stringify(post);
-                console.log(json);
-                let title = JSON.parse(json);
-                    // Handle the results here (response.result has the parsed body).
-                    console.log("Response", response);
-                  },
-                  function(err) { console.error("Execute error", err); });
-      }
+
+                console.log("Response", response);
+        },
+            function(err) { console.error("Execute error", err); });
+    }
       gapi.load("client:auth2", function() {
         gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
       });
@@ -155,56 +141,6 @@
     </table>
     <br><br><br>
     <a href="index2.html" class="links">Повернутися на попереднє меню</a>
-    <!--<form id="addForm" onsubmit="SendJSON(this);" method="post">
-        <button >
-
-        </button>
-    </form>
-
-        <table>
-            <caption>Інформація про канал</caption>
-            <tr>
-                <th>
-                    Ім'я каналу
-                </th>
-                <th>
-                    Дата створення
-                </th>
-                <th>
-                   Кількість підписників
-                </th>
-
-                <th>
-                    Кількість відео на каналі
-                </th>
-            </tr>
-            <tr>
-                <td>
-                    <input type="text" name="name_chanel" form="addForm">
-                </td>
-                <td>
-                    <input type="text" name="date_of_create" form="addForm">
-                </td>
-                <td>
-                    <input type="text" name="number_of_followers" form="addForm">
-                </td>
-                <td>
-                    <input type="text" name="number_all_video" form="addForm">
-                </td>
-                <td>
-                    <input type="text" name="number_of_views" form="addForm">
-                </td>
-            </tr>
-        </table>
     
-        <form id="form2" onsubmit="ShowJSON(this);return false">
-				
-            <h3>JSON</h3>
-            <p></p>
-            <textarea name="json" rows="5" cols="46"></textarea>
-         
-            <input type="submit" value="Show">
-        </form>
-    -->
 </body>
 </html>
