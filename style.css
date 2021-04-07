@@ -90,6 +90,11 @@ span.logo {
   position: absolute;
   top: 100px;
 }
+
+.info {
+  position: absolute;
+  top: 200px;
+}
 ul.info {
   padding-left: 200px;
 }
@@ -168,4 +173,12 @@ table#infoTable tr td {
   font-family: "Dela Gothic One", cursive;
   border-color: rgba(255, 0, 0, 0.349);
   border-radius: 15px;
+}
+table#infoTable tr th {
+  width: 200px;
+}
+table#infoTable tr td {
+  background-color: rgb(172, 131, 131);
+  height: 20px;
+  width: 200px;
 }

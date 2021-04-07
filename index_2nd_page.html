@@ -16,7 +16,7 @@
             box-sizing: border-box;
         }
 
-        #one {
+        #pre_load {
             display: block;
             position: relative;
             background-size: cover;
@@ -59,11 +59,11 @@
 </head>
 
 <body id="second_page">
-    <div id="one">
+    <div id="pre_load">
         <img
             src="https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all">
     </div>
-
+    <h1></h1>
     <div id="two">
         <h1><span>YouTube</span> Analytics</h1>
         <span class="logo">
@@ -80,12 +80,12 @@
                 </a>
             </li>
             <li>
-                <a href="index3.html">
+                <a href="index4.html">
                     Порівняти глобальну інформацію про канали
                 </a>
             </li>
             <li>
-                <a href="index3.html">
+                <a href="index5.html">
                     Сортувати канали за їхніми даними
                 </a>
             </li>
@@ -96,12 +96,12 @@
 
 
     <script>
-        const one = document.querySelector('#one');
+        const preLoad = document.querySelector('#pre_load');
         const two = document.querySelector('#two');
 
         setTimeout(function () {
-            one.style.opacity = "0";
-            one.style.transitionDuration = "0.8s";
+            preLoad.style.opacity = "0";
+            preLoad.style.transitionDuration = "0.8s";
         }, 2000);
 
         setTimeout(function () {

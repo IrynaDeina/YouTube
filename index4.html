@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Порівняти</title>
-    
+
 </head>
+
 <body onload="loadClient()">
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
+
      
     function loadClient()
     {
@@ -25,6 +28,7 @@
     {
         
        let id = document.getElementById("channelID");
+
         console.log(id.value);
         //id for example UClI9aidW3X044NeB4QS-yxw
         return gapi.client.youtube.channels.list({
@@ -35,7 +39,6 @@
             id.value
           ]
         })
-
         .then(function(response)
         {
                 let post = 
@@ -91,16 +94,88 @@
           console.log(view);
           view.innerHTML = name;
       }
+      function execute2()
+    {
+        
+       let id = document.getElementById("channelID2");
+
+        console.log(id.value);
+        //id for example UCi9vAi9cgLd0p6QFasW9d7g
+        return gapi.client.youtube.channels.list({
+          "part": [
+            "snippet,contentDetails,statistics"
+          ],
+          "id": [
+            id.value
+          ]
+        })
+        .then(function(response)
+        {
+                let post = 
+                {
+                    title: response.result.items[0].snippet.title,
+                    date: response.result.items[0].snippet.publishedAt,
+                    subscriber: response.result.items[0].statistics.subscriberCount,
+                    video: response.result.items[0].statistics.videoCount,
+                    view: response.result.items[0].statistics.viewCount
+                }
+                
+                Title2(post.title);
+                DateCreate2(post.date);
+                Subscriber2(post.subscriber);
+                Video2(post.video);
+                View2(post.view);
+
+                console.log("Response", response);
+        },
+            function(err) { console.error("Execute error", err); });
+    }
+      gapi.load("client:auth2", function() {
+        gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
+      });
+
+      function Title2(name)
+      {
+          let title = document.getElementById("name_chanel2");
+          console.log(title);
+            title.innerHTML = name;
+      }
+      function DateCreate2(name)
+      {
+          let date = document.getElementById("date_of_create2");
+          console.log(date);
+          date.innerHTML = name;
+      }
+      function Subscriber2(name)
+      {
+          let subscriber = document.getElementById("number_of_followers2");
+          console.log(subscriber);
+          subscriber.innerHTML = name;
+      }
+      function Video2(name)
+      {
+          let video = document.getElementById("number_all_video2");
+          console.log(video);
+          video.innerHTML = name;
+      }
+      function View2(name)
+      {
+          let view = document.getElementById("number_of_views2");
+          console.log(view);
+          view.innerHTML = name;
+      }
+      
     </script>
-    
+
     <div>
         <span>
-            Введіть ID каналу
+            Введіть ID каналів
         </span>
         <input type="text" id="channelID">
-        <button onclick="execute()">Показати</button>
+        <input type="text" id="channelID2">
+        <button onclick="execute(), execute2()">Показати</button>
     </div>
-    <table id="infoTable"> 
+    <table id="infoTable">
         <caption>Інформація про канал</caption>
         <tr>
             <th>
@@ -110,7 +185,7 @@
                 Дата створення
             </th>
             <th>
-               Кількість підписників
+                Кількість підписників
             </th>
 
             <th>
@@ -123,24 +198,42 @@
         </tr>
         <tr>
             <td id="name_chanel">
-                
+
             </td>
             <td id="date_of_create">
-                
+
             </td>
             <td id="number_of_followers">
-               
+
             </td>
             <td id="number_all_video">
-                
+
             </td>
             <td id="number_of_views">
+
+            </td>
+        </tr>
+        <tr>
+            <td id="name_chanel2">
+                
+            </td>
+            <td id="date_of_create2">
+                
+            </td>
+            <td id="number_of_followers2">
+               
+            </td>
+            <td id="number_all_video2">
+                
+            </td>
+            <td id="number_of_views2">
                 
             </td>
         </tr>
     </table>
     <br><br><br>
-    <a href="index2.html" class="links">Повернутися на попереднє меню</a>
+    <a href="index_2nd_page.html" class="links">Повернутися на попереднє меню</a>
     
 </body>
+
 </html>
