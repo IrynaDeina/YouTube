@@ -99,10 +99,7 @@
   display: block;
   margin-top: 150px;
   }
-  
-  #second_page .tasks ul {
 
-}
 #second_page .tasks li {
   list-style-type: none;
   margin-bottom: 20px;
@@ -147,16 +144,15 @@
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
-<<<<<<< HEAD
-table#infoTable tr th
+table#infoTable5 tr th
 {
   width: 300px;
-=======
+}
+
 table#infoTable tr th {
   font-family: "Dela Gothic One", cursive;
   color: brown;
   width: 200px;
->>>>>>> 5712c907b70a5de5b31ba238a55f97fc5cb33085
 }
 table#infoTable tr td {
   background-color: rgba(255, 0, 0, 0.322);
@@ -202,7 +198,6 @@ table#infoTable tr td {
   height: 20px;
   width: 200px;
 }
-<<<<<<< HEAD
 div.compare
 {
   height: 200px;
@@ -239,5 +234,11 @@ div.compare button
   width: 150px;
   margin: auto;
 }
-=======
->>>>>>> 5712c907b70a5de5b31ba238a55f97fc5cb33085
+table#infoTable5 tr th {
+  width: 500px;
+}
+table#infoTable5 tr td {
+  background-color: rgb(172, 131, 131);
+  height: 20px;
+  width: 500px;
+}
