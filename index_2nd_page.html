@@ -10,21 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        #pre_load {
-            display: block;
-            position: relative;
-            background-size: cover;
-            height: 100%;
-            width: 100%;
-        }
-
-        #two {
+        #second_page {
             position: absolute;
             top: 0;
             background-position: center;
@@ -58,18 +44,12 @@
     </style>
 </head>
 
-<body id="second_page">
-    <div id="pre_load">
-        <img
-            src="https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all">
-    </div>
-    <h1></h1>
+<body>
     <div id="two">
         <h1><span>YouTube</span> Analytics</h1>
         <span class="logo">
 
         </span>
-        <button class="list_btn" onclick="change_bckg"></button>
         <p class="choose">
             Оберіть задачу
         </p>
@@ -93,29 +73,6 @@
         <button class="goBack_btn" onclick="window.location.href = 'index.html'"></button>
 
     </div>
-
-
-    <script>
-        const preLoad = document.querySelector('#pre_load');
-        const two = document.querySelector('#two');
-
-        setTimeout(function () {
-            preLoad.style.opacity = "0";
-            preLoad.style.transitionDuration = "0.8s";
-        }, 2000);
-
-        setTimeout(function () {
-            two.style.display = "block";
-        }, 2800);
-
-        const button = document.querySelector('.list_btn');
-        button.onclick = function change_bckg() {
-            button.style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/c/c3/Red_Diamond_Play_Button.png)"
-        };
-
-
-
-    </script>
 
 </body>
 

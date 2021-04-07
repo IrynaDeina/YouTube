@@ -7,9 +7,27 @@
 
 /*--MAINE PAGE--*/
 
-body#main_page {
+#main_page {
   background-size: cover;
   background-image: url(https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all);
+}
+
+#main_page div#pre_load {
+  display: block;
+  position: relative;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+#main_page {
+  position: absolute;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  display: none;
+  height: 100%;
+  width: 100%;
 }
 
 #main_page h1, #second_page h1 {
@@ -54,6 +72,23 @@ body#main_page {
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
+
+.list_btn, .goBack_btn {
+  position: absolute;
+  cursor: pointer;
+  top: 60px;
+  left: 35px;
+  height: 50px;
+  width: 79px;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/YouTube_Red_Diamond_Play_Button.svg/1200px-YouTube_Red_Diamond_Play_Button.svg.png");
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
+  border: none;
+        }
+
+
+
 
 .links {
   text-decoration: none;

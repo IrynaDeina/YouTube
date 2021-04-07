@@ -1,3 +1,14 @@
+const preLoad = document.querySelector('#pre_load');
+const main = document.querySelector('.main');
+
+setTimeout(function () {
+    preLoad.style.opacity = "0";
+    preLoad.style.transitionDuration = "0.8s";
+}, 2000);
+
+setTimeout(function () {
+    main.style.display = "block";
+}, 2800);
 
 
 /*
@@ -51,7 +62,7 @@ class YouTube
     {
         return this.number_of_views;
     }
-    
+
 }
 
 var you = new Array();
@@ -59,16 +70,16 @@ var you = new Array();
 function SendJSON(value)
 {
     let text = document.getElementsByTagName("textarea")[0];
-    
+
     you.push(
         new YouTube(
-            value.elements["name_chanel"].value, 
+            value.elements["name_chanel"].value,
             value.elements["date_of_create"].value,
             value.elements["number_of_followers"].valueAsDate,
             value.elements["number_all_video"].value,
             value.elements["number_of_views"].value
             ));
 
-    text.value = JSON.stringify(you);  
+    text.value = JSON.stringify(you);
 
 }*/
