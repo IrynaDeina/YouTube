@@ -14,79 +14,7 @@
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
-<<<<<<< HEAD
 
-        function loadClient() {
-            gapi.client.setApiKey("AIzaSyDNTcpVfVk5LYojl59rvy_1xcTGjMIAMKU");
-            return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
-                .then(function () { console.log("GAPI client loaded for API"); },
-                    function (err) { console.error("Error loading GAPI client for API", err); });
-        }
-
-        function execute() {
-
-            let id = document.getElementById("channelID");
-            console.log(id.value);
-            //id for example UClI9aidW3X044NeB4QS-yxw
-            return gapi.client.youtube.channels.list({
-                "part": [
-                    "snippet,contentDetails,statistics"
-                ],
-                "id": [
-                    id.value
-                ]
-            })
-
-                .then(function (response) {
-                    let post =
-                    {
-                        title: response.result.items[0].snippet.title,
-                        date: response.result.items[0].snippet.publishedAt,
-                        subscriber: response.result.items[0].statistics.subscriberCount,
-                        video: response.result.items[0].statistics.videoCount,
-                        view: response.result.items[0].statistics.viewCount
-                    }
-
-                    Title(post.title);
-                    DateCreate(post.date);
-                    Subscriber(post.subscriber);
-                    Video(post.video);
-                    View(post.view);
-
-                    console.log("Response", response);
-                },
-                    function (err) { console.error("Execute error", err); });
-        }
-        gapi.load("client:auth2", function () {
-            gapi.auth2.init({ client_id: "YOUR_CLIENT_ID" });
-        });
-
-        function Title(name) {
-            let title = document.getElementById("name_chanel");
-            console.log(title);
-            title.innerHTML = name;
-        }
-        function DateCreate(name) {
-            let date = document.getElementById("date_of_create");
-            console.log(date);
-            date.innerHTML = name;
-        }
-        function Subscriber(name) {
-            let subscriber = document.getElementById("number_of_followers");
-            console.log(subscriber);
-            subscriber.innerHTML = name;
-        }
-        function Video(name) {
-            let video = document.getElementById("number_all_video");
-            console.log(video);
-            video.innerHTML = name;
-        }
-        function View(name) {
-            let view = document.getElementById("number_of_views");
-            console.log(view);
-            view.innerHTML = name;
-        }
-=======
      
     function loadClient()
     {
@@ -236,7 +164,7 @@
           console.log(view);
           view.innerHTML = name;
       }
->>>>>>> 37cac621c1d1797ce6a6f995871ab2c810e1a005
+      
     </script>
 
     <div>
@@ -304,8 +232,8 @@
         </tr>
     </table>
     <br><br><br>
-    <a href="index_2nd_page.html" class="links">Повернутися на попереднє меню</a>
-
+    <a href="index2.html" class="links">Повернутися на попереднє меню</a>
+    
 </body>
 
 </html>

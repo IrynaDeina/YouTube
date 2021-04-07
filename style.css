@@ -14,6 +14,7 @@
   background-image: url(https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all);
 }
 
+<<<<<<< HEAD
 #main_page div#pre_load {
   display: block;
   position: relative;
@@ -33,13 +34,18 @@
 }
 
 #main_page h1, #second_page h1 {
+=======
+#main_page h1,
+#second_page h1 {
+>>>>>>> dd00b894a9863e339a0952c195753d7aace78b17
   position: relative;
   top: 50px;
   color: red;
   font-size: 50px;
   text-align: center;
 }
-#main_page h1 span, #second_page h1 span {
+#main_page h1 span,
+#second_page h1 span {
   color: black;
 }
 
@@ -146,12 +152,51 @@ p.choose {
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
-table#infoTable tr th
-{
+table#infoTable tr th {
+  font-family: "Dela Gothic One", cursive;
+  color: brown;
   width: 200px;
 }
-table#infoTable tr td
-{
+table#infoTable tr td {
+  background-color: rgba(255, 0, 0, 0.322);
+  font-family: "Dela Gothic One", cursive;
+  color: brown;
+  height: 20px;
+  width: 200px;
+}
+
+.table-title {
+  font-family: "Dela Gothic One", cursive;
+  font-size: 23px;
+  margin: 13px 0;
+  color: brown;
+}
+
+.input-title {
+  font-family: "Dela Gothic One", cursive;
+  color: rgba(255, 0, 0, 0.664);
+}
+
+.stat-title {
+  font-family: "Dela Gothic One", cursive;
+  color: red;
+  text-align: center;
+}
+
+.container {
+  margin-top: 260px;
+  text-align: center;
+}
+
+.channel-input {
+  font-family: "Dela Gothic One", cursive;
+  border-color: rgba(255, 0, 0, 0.349);
+  border-radius: 15px;
+}
+table#infoTable tr th {
+  width: 200px;
+}
+table#infoTable tr td {
   background-color: rgb(172, 131, 131);
   height: 20px;
   width: 200px;
