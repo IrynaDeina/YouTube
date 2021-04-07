@@ -88,6 +88,11 @@ span.logo {
   position: absolute;
   top: 100px;
 }
+
+.info {
+  position: absolute;
+  top: 200px;
+}
 ul.info {
   padding-left: 200px;
 }
@@ -126,28 +131,13 @@ p.choose {
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
-table#infoTable tr th {
+table#infoTable tr th
+{
   width: 200px;
 }
-table#infoTable tr td {
+table#infoTable tr td
+{
   background-color: rgb(172, 131, 131);
   height: 20px;
   width: 200px;
-}
-
-.table-title {
-  font-family: "Dela Gothic One", cursive;
-}
-
-.input-title {
-  font-family: "Dela Gothic One", cursive;
-}
-
-.stat-title {
-  font-family: "Dela Gothic One", cursive;
-  text-align: center;
-}
-
-.container {
-  text-align: center;
 }
