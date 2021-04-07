@@ -8,14 +8,42 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body id="main_page">
-    <div>
+<body>
+    <div id="pre_load">
+        <img src="https://pa1.narvii.com/6110/2b4ef25710ad90eaefd424afea31a4e8168c2f63_hq.gif">
+    </div>
+    <div id="main_page">
         <h1><span>Hello! </span>Welcome to YouTube</h1>
         <ul class="menu">
-            <li><a href="index_2nd_page.html">YouTube Analytics</a></li>
+            <li><a href="index2.html">YouTube Analytics</a></li>
             <li><a href="#">Налаштування</a></li>
         </ul>
+        <button class="list_btn" onclick="change_bckg"></button>
+
     </div>
+
+    <script>
+
+        const preLoad = document.querySelector('#pre_load');
+        const mainPage = document.querySelector('#main_page');
+
+        setTimeout(function () {
+            preLoad.style.opacity = "0";
+            preLoad.style.transitionDuration = "0.8s";
+        }, 2000);
+
+        setTimeout(function () {
+            mainPage.style.display = "block";
+        }, 3000);
+
+
+        const button = document.querySelector('.list_btn');
+        button.onclick = function change_bckg() {
+            button.style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/c/c3/Red_Diamond_Play_Button.png)"
+        };
+
+
+    </script>
 </body>
 
 </html>
