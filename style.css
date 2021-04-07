@@ -14,7 +14,6 @@
   background-image: url(https://venturebeat.com/wp-content/uploads/2017/08/youtube_logo_old_new1.gif?fit=1200%2C600&strip=all);
 }
 
-<<<<<<< HEAD
 #main_page div#pre_load {
   display: block;
   position: relative;
@@ -33,17 +32,15 @@
   width: 100%;
 }
 
-#main_page h1, #second_page h1 {
-=======
 #main_page h1,
 #second_page h1 {
->>>>>>> dd00b894a9863e339a0952c195753d7aace78b17
   position: relative;
   top: 50px;
   color: red;
   font-size: 50px;
   text-align: center;
 }
+
 #main_page h1 span,
 #second_page h1 span {
   color: black;
@@ -100,8 +97,29 @@
 #second_page .tasks {
   text-align: center;
   display: block;
-  margin-top: 100px;
+  margin-top: 150px;
   }
+  
+  #second_page .tasks ul {
+
+}
+#second_page .tasks li {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+#second_page .tasksl li a {
+  text-decoration: none;
+  color: black;
+}
+#second_page .tasks ul li a:hover {
+  color: red;
+}
+#second_page h2 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-size: 2em;
+  color: rgb(224, 222, 222);
+}
 
 #second_page.tasks:hover {
   text-decoration: none;
@@ -110,29 +128,6 @@
   transition-duration: 0.8s;
 }
 
-.info {
-  position: absolute;
-  top: 200px;
-}
-ul.info {
-  padding-left: 200px;
-}
-ul.info li {
-  list-style-type: none;
-  margin-bottom: 20px;
-}
-ul.info li a {
-  text-decoration: none;
-  color: black;
-}
-ul.info li a:hover {
-  color: red;
-}
-p.choose {
-  font-weight: bold;
-  color: brown;
-  padding-left: 300px;
-}
 
 .btn {
   text-decoration: none;
