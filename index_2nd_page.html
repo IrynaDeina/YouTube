@@ -16,7 +16,7 @@
             background-position: center;
             background-size: cover;
             background-image: url("https://steamuserimages-a.akamaihd.net/ugc/973226453025212252/B3A8B4CBB312E03EE5C6C8F3018CACCD2591C5CB/");
-            display: none;
+            display: block;
             height: 100%;
             width: 100%;
         }
@@ -37,7 +37,8 @@
         }
 
         .goBack_btn {
-            left: 35px;
+            bottom: 35px;
+            right: 35px;
             width: 60px;
             background-image: url("https://celebslist.net/wp-content/uploads/2020/12/Youtube-Japan.png");
         }
@@ -45,31 +46,26 @@
 </head>
 
 <body>
-    <div id="two">
+    <div id="second_page">
         <h1><span>YouTube</span> Analytics</h1>
         <span class="logo">
 
         </span>
-        <p class="choose">
-            Оберіть задачу
-        </p>
-        <ul class="info">
-            <li>
-                <a href="index3.html">
-                    Відобразити глобальну інформацію про канал
-                </a>
-            </li>
-            <li>
-                <a href="index3.html">
-                    Порівняти глобальну інформацію про канали
-                </a>
-            </li>
-            <li>
-                <a href="index3.html">
-                    Сортувати канали за їхніми даними
-                </a>
-            </li>
-        </ul>
+
+        <div class="tasks">
+            <h2 class="choose">Оберіть задачу</h2>
+            <ul>
+                <li>
+                    <a href="index3.html">Відобразити глобальну інформацію про канал</a>
+                </li>
+                <li>
+                    <a href="index4.html">Порівняти глобальну інформацію про канали</a>
+                </li>
+                <li>
+                    <a href="index5.html">Сортувати канали за їхніми даними</a>
+                </li>
+            </ul>
+        </div>
         <button class="goBack_btn" onclick="window.location.href = 'index.html'"></button>
 
     </div>
