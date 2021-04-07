@@ -5,13 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
-<<<<<<< HEAD
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
-    <title>Document</title>
-=======
-    <title>Відобразити</title>
->>>>>>> 08b3311308853d44e40369e3d3de1a2fde5bd969
+    <title>Сортувати</title>
     
 </head>
 <body onload="loadClient()">
@@ -113,16 +107,15 @@
       }
     </script>
     
-    <div class="container">
-        <h1 class="stat-title">Статистика про канал</h1>
-        <span class="input-title">
-            Введіть ID каналу:
+    <div>
+        <span>
+            Введіть ID каналу
         </span>
         <input type="text" id="channelID">
-        <button onclick="execute()" class="btn">Показати</button>
-    
-    <table id="infoTable" style="margin: 0 auto;"> 
-        <caption class="table-title">Інформація про канал</caption>
+        <button onclick="execute()">Показати</button>
+    </div>
+    <table id="infoTable"> 
+        <caption>Інформація про канал</caption>
         <tr>
             <th>
                 Ім'я каналу
@@ -162,8 +155,6 @@
     </table>
     <br><br><br>
     <a href="index2.html" class="links">Повернутися на попереднє меню</a>
-    </div>
-    
     <!--<form id="addForm" onsubmit="SendJSON(this);" method="post">
         <button >
 
