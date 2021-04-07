@@ -10,6 +10,7 @@
 </head>
 <body onload="loadClient()">
 
+    <p>UClI9aidW3X044NeB4QS-yxw   UCi9vAi9cgLd0p6QFasW9d7g</p>
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
      
@@ -21,6 +22,11 @@
                   function(err) { console.error("Error loading GAPI client for API", err); });
     }
 
+    let firstCountFollowers = 0;
+    let secondCountFollowers = 0;
+
+    let firstArray = new Array();
+    let secondArray = new Array();
     function execute()
     {
         
@@ -47,6 +53,14 @@
                     view: response.result.items[0].statistics.viewCount
                 }
                 
+                firstCountFollowers = post.subscriber;
+
+                firstArray.push(post.title);
+                firstArray.push(post.date);
+                firstArray.push(post.subscriber);
+                firstArray.push(post.video);
+                firstArray.push(post.view);
+
                 Title(post.title);
                 DateCreate(post.date);
                 Subscriber(post.subscriber);
@@ -117,11 +131,19 @@
                     view: response.result.items[0].statistics.viewCount
                 }
                 
+                secondCountFollowers = post.subscriber;
+
                 Title2(post.title);
                 DateCreate2(post.date);
                 Subscriber2(post.subscriber);
                 Video2(post.video);
                 View2(post.view);
+
+                secondArray.push(post.title);
+                secondArray.push(post.date);
+                secondArray.push(post.subscriber);
+                secondArray.push(post.video);
+                secondArray.push(post.view);
 
                 console.log("Response", response);
         },
@@ -161,6 +183,112 @@
           console.log(view);
           view.innerHTML = name;
       }
+
+    
+      function followersTop()
+      {
+        if(firstArray[2] < secondArray[2])
+        {
+            Title(secondArray[0]);
+            DateCreate(secondArray[1]);
+            Subscriber(secondArray[2]);
+            Video(secondArray[3]);
+            View(secondArray[4]);
+
+            Title2(firstArray[0]);
+            DateCreate2(firstArray[1]);
+            Subscriber2(firstArray[2]);
+            Video2(firstArray[3]);
+            View2(firstArray[4]);
+        }
+      }
+      function followersBottom()
+      {
+        if(firstArray[2] < secondArray[2])
+        {
+            Title(firstArray[0]);
+            DateCreate(firstArray[1]);
+            Subscriber(firstArray[2]);
+            Video(firstArray[3]);
+            View(firstArray[4]);
+
+            Title2(secondArray[0]);
+            DateCreate2(secondArray[1]);
+            Subscriber2(secondArray[2]);
+            Video2(secondArray[3]);
+            View2(secondArray[4]);
+        }
+      }
+      function videoTop()
+      {
+        if(firstArray[3] < secondArray[3])
+        {
+            Title(firstArray[0]);
+            DateCreate(firstArray[1]);
+            Subscriber(firstArray[2]);
+            Video(firstArray[3]);
+            View(firstArray[4]);
+
+            Title2(secondArray[0]);
+            DateCreate2(secondArray[1]);
+            Subscriber2(secondArray[2]);
+            Video2(secondArray[3]);
+            View2(secondArray[4]);
+        }
+      }
+
+      function videoBottom()
+      {
+        if(firstArray[3] < secondArray[3])
+        {
+            Title(secondArray[0]);
+            DateCreate(secondArray[1]);
+            Subscriber(secondArray[2]);
+            Video(secondArray[3]);
+            View(secondArray[4]);
+
+            Title2(firstArray[0]);
+            DateCreate2(firstArray[1]);
+            Subscriber2(firstArray[2]);
+            Video2(firstArray[3]);
+            View2(firstArray[4]);
+        }
+      }
+     function viewTop()
+      {
+        if(firstArray[4] < secondArray[4])
+        {
+            Title(firstArray[0]);
+            DateCreate(firstArray[1]);
+            Subscriber(firstArray[2]);
+            Video(firstArray[3]);
+            View(firstArray[4]);
+
+            Title2(secondArray[0]);
+            DateCreate2(secondArray[1]);
+            Subscriber2(secondArray[2]);
+            Video2(secondArray[3]);
+            View2(secondArray[4]);
+        }
+      }
+      
+      function viewBottom()
+      {
+        if(firstArray[4] < secondArray[4])
+        {
+            Title(secondArray[0]);
+            DateCreate(secondArray[1]);
+            Subscriber(secondArray[2]);
+            Video(secondArray[3]);
+            View(secondArray[4]);
+
+            Title2(firstArray[0]);
+            DateCreate2(firstArray[1]);
+            Subscriber2(firstArray[2]);
+            Video2(firstArray[3]);
+            View2(firstArray[4]);
+        }
+      }
     </script>
     
     <div class="compare">
@@ -174,8 +302,9 @@
         <button onclick="execute(), execute2()">Показати</button>
 
     </div>
+
     <table id="infoTable"> 
-        <caption>Інформація про канал</caption>
+        <caption>Сортувати два канали</caption>
         <tr>
             <th>
                 Ім'я каналу
@@ -183,19 +312,40 @@
             <th>
                 Дата створення
             </th>
-            <th>
+
+             <th>
                Кількість підписників
+               
+                <button id="followersTop" onclick="followersTop()">
+                    <img src="arrow.png">
+                </button>
+                
+                <button id="followersBottom" onclick="followersBottom()">
+                    <img src="arrow2.png">
+                </button>
             </th>
 
             <th>
                 Кількість відео на каналі
+                <button id="videoTop" onclick="videoTop()">
+                    <img src="arrow.png">
+                </button>
+                <button id="videoBottom" onclick="videoBottom()">
+                    <img src="arrow2.png">
+                </button>
             </th>
 
             <th>
                 Кількість переглядів
+                <button id="viewTop" onclick="viewTop()">
+                    <img src="arrow.png">
+                </button>
+                <button id="viewBottom" onclick="viewBottom()">
+                    <img src="arrow2.png">
+                </button>
             </th>
         </tr>
-        <tr>
+        <tr class="top_info">
             <td id="name_chanel">
                 
             </td>
@@ -212,7 +362,7 @@
                 
             </td>
         </tr>
-        <tr>
+        <tr class="bottom_info">
             <td id="name_chanel2">
                 
             </td>
@@ -230,6 +380,7 @@
             </td>
         </tr>
     </table>
+
     <br><br><br>
     <a href="index_2nd_page.html" class="links">Повернутися на попереднє меню</a>
     

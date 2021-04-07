@@ -133,11 +133,47 @@ p.choose {
 }
 table#infoTable tr th
 {
-  width: 200px;
+  width: 300px;
 }
 table#infoTable tr td
 {
   background-color: rgb(172, 131, 131);
   height: 20px;
   width: 200px;
+}
+div.compare
+{
+  height: 200px;
+  width: 500px;
+  margin: auto;
+  position: relative;
+  margin-bottom: 50px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+div.compare span, div.compare input, div.compare button
+{
+  display: block;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+div.compare span
+{
+  width: 150px;
+  margin: auto;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+div.compare input
+{
+  width: 200px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+#channelID2
+{
+  margin-bottom: 20px;
+}
+div.compare button
+{
+  width: 150px;
+  margin: auto;
 }
