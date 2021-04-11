@@ -78,7 +78,8 @@
   transition-duration: 0.8s;
 }
 
-.list_btn, .goBack_btn {
+.list_btn,
+.goBack_btn {
   position: absolute;
   cursor: pointer;
   top: 60px;
@@ -90,15 +91,15 @@
   background-position: center;
   border-radius: 15%;
   border: none;
-  }
+}
 
-  /*--SECOND PAGE--*/
+/*--SECOND PAGE--*/
 
 #second_page .tasks {
   text-align: center;
   display: block;
   margin-top: 150px;
-  }
+}
 
 #second_page .tasks li {
   list-style-type: none;
@@ -125,7 +126,6 @@
   transition-duration: 0.8s;
 }
 
-
 .btn {
   text-decoration: none;
   color: #ffffff;
@@ -138,14 +138,17 @@
   margin: 13px;
 }
 
+.btn--margin {
+  margin-left: 500px;
+}
+
 .btn:hover {
   text-decoration: none;
   color: #000000;
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
 }
-table#infoTable5 tr th
-{
+table#infoTable5 tr th {
   width: 300px;
 }
 
@@ -198,8 +201,7 @@ table#infoTable tr td {
   height: 20px;
   width: 200px;
 }
-div.compare
-{
+div.compare {
   height: 200px;
   width: 500px;
   margin: auto;
@@ -207,30 +209,27 @@ div.compare
   margin-bottom: 50px;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-div.compare span, div.compare input, div.compare button
-{
+div.compare span,
+div.compare input,
+div.compare button {
   display: block;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-div.compare span
-{
+div.compare span {
   width: 150px;
   margin: auto;
   margin-bottom: 20px;
   padding-top: 20px;
 }
-div.compare input
-{
+div.compare input {
   width: 200px;
   margin: auto;
   margin-bottom: 20px;
 }
-#channelID2
-{
+#channelID2 {
   margin-bottom: 20px;
 }
-div.compare button
-{
+div.compare button {
   width: 150px;
   margin: auto;
 }

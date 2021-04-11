@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
     <title>Порівняти</title>
 
 </head>
@@ -167,16 +169,17 @@
       
     </script>
 
-    <div>
-        <span>
-            Введіть ID каналів
+    <div class="container">
+        <h1 class="stat-title">Порівняння статистики двох каналів</h1>
+        <span class="input-title">
+            Введіть ID каналів:
         </span>
-        <input type="text" id="channelID">
-        <input type="text" id="channelID2">
-        <button onclick="execute(), execute2()">Показати</button>
+        <input type="text" id="channelID"  class="channel-input">
+        <input type="text" id="channelID2"  class="channel-input">
+        <button onclick="execute(), execute2()" class="btn">Показати</button>
     </div>
-    <table id="infoTable">
-        <caption>Порівняти два канали</caption>
+    <table id="infoTable" style="margin: 0 auto; text-align: center;">
+        <caption  class="table-title">Порівняти два канали</caption>
         <tr>
             <th>
                 Ім'я каналу
@@ -232,7 +235,7 @@
         </tr>
     </table>
     <br><br><br>
-    <a href="index2.html" class="links">Повернутися на попереднє меню</a>
+    <a href="index2.html" class="btn btn--margin">Повернутися на попереднє меню</a>
     
 </body>
 
