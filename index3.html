@@ -28,7 +28,7 @@
 
             let id = document.getElementById("channelID");
             console.log(id.value);
-            //id for example UClI9aidW3X044NeB4QS-yxw
+            
             return gapi.client.youtube.channels.list({
                 "part": [
                     "snippet,contentDetails,statistics"
@@ -47,7 +47,9 @@
                         video: response.result.items[0].statistics.videoCount,
                         view: response.result.items[0].statistics.viewCount
                     }
-
+                    //id for example UClI9aidW3X044NeB4QS-yxw
+                   
+                   
                     Title(post.title);
                     DateCreate(post.date);
                     Subscriber(post.subscriber);
@@ -87,6 +89,20 @@
             console.log(view);
             view.innerHTML = name;
         }
+
+
+        let channelID = document.getElementById("channelID");
+
+        if (sessionStorage.getItem("autosave"))
+        { 
+            channelID.value = sessionStorage.getItem("autosave");
+        }
+
+        channelID.addEventListener("change", function()
+        {
+            sessionStorage.setItem("autosave", channelID.value);
+        });
+
     </script>
 
     <div class="container">

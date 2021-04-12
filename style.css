@@ -86,7 +86,7 @@
   left: 35px;
   height: 50px;
   width: 79px;
-  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/YouTube_Red_Diamond_Play_Button.svg/1200px-YouTube_Red_Diamond_Play_Button.svg.png");
+  background-image: url(dark.png);
   background-size: cover;
   background-position: center;
   border-radius: 15%;
@@ -116,7 +116,7 @@
   font-weight: 700;
   letter-spacing: 1px;
   font-size: 2em;
-  color: rgb(224, 222, 222);
+  color: maroon;
 }
 
 #second_page.tasks:hover {
@@ -139,7 +139,7 @@
 }
 
 .btn--margin {
-  margin-left: 500px;
+  margin-left: 550px;
 }
 
 .btn:hover {
@@ -184,7 +184,7 @@ table#infoTable tr td {
 }
 
 .container {
-  margin-top: 260px;
+  margin-top: 150px;
   text-align: center;
 }
 
