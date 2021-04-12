@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,22 +7,24 @@
     <title>YouTube</title>
     <meta name="viewport" content="with=device-width,initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="light.css" id="theme_link">
 </head>
 
 <body>
     <div id="pre_load">
         <img src="https://pa1.narvii.com/6110/2b4ef25710ad90eaefd424afea31a4e8168c2f63_hq.gif">
     </div>
-    <div id="main_page">
-        <h1><span>Hello! </span>Welcome to YouTube</h1>
-        <ul class="menu">
-            <li><a href="index2.html">YouTube Analytics</a></li>
-            <li><a href="#">Налаштування</a></li>
-        </ul>
-        <button class="list_btn" onclick="change_bckg"></button>
+    <div id="back_color">
+        <div id="main_page">
+            <h1><span>Hello! </span>Welcome to YouTube</h1>
+            <ul class="menu">
+                <li><a href="index2.html">YouTube Analytics</a></li>
+                <li><a href="#">Налаштування</a></li>
+            </ul>
+            <button class="list_btn theme_button" onclick="change_bckg" id="theme_button"></button>
 
-    </div>
-
+        </div>
+</div>
     <script>
 
         const preLoad = document.querySelector('#pre_load');
@@ -36,13 +39,56 @@
             mainPage.style.display = "block";
         }, 3000);
 
-
+        let count = 0;
         const button = document.querySelector('.list_btn');
-        button.onclick = function change_bckg() {
-            button.style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/c/c3/Red_Diamond_Play_Button.png)"
+        button.onclick = function change_bckg()
+        {
+            count++;
+            if(count == 1)
+            {
+                button.style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/c/c3/Red_Diamond_Play_Button.png)";
+            }
+            else
+            if(count > 1)
+                {
+                    count = count - 2;
+                    button.style.backgroundImage = "url(https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/YouTube_Red_Diamond_Play_Button.svg/1200px-YouTube_Red_Diamond_Play_Button.svg.png)";
+                }
+            
         };
 
+        
 
+        
+    
+  
+    var btn = document.getElementById("theme_button");
+    var link = document.getElementById("theme_link");
+    
+    btn.addEventListener("click", function () { ChangeTheme(); });
+
+    function ChangeTheme()
+    {
+        let lightTheme = "light.css";
+        let darkTheme = "dark.css";
+
+        var currTheme = link.getAttribute("href");
+        var theme = "";
+
+        if(currTheme == lightTheme)
+        {
+        currTheme = darkTheme;
+        theme = "dark";
+        }
+        else
+        {    
+        currTheme = lightTheme;
+        theme = "light";
+        }
+
+        link.setAttribute("href", currTheme);
+        console.log(currTheme);
+    }
     </script>
 </body>
 
