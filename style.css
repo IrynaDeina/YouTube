@@ -257,3 +257,24 @@ table#infoTable5 tr td {
   color: brown;
   text-align: center;
 }
+
+
+
+body.dark .list_btn,
+.goBack_btn {
+  background-image: url(light.png);
+}
+
+body.dark #main_page {
+  background-image: url(/yt---tv.gif);
+}
+
+body.dark #main_page h1 span,
+body.dark #second_page h1 span {
+  color: #ffffff;
+}
+
+body.dark {
+  background-color: rgba(0, 0, 0, 0.918);
+  color: #ffffff;
+}

@@ -21,7 +21,7 @@
                 <li><a href="index2.html">YouTube Analytics</a></li>
                 <li><a href="#">Налаштування</a></li>
             </ul>
-            <button class="list_btn theme_button" onclick="change_bckg" id="theme_button"></button>
+            <button class="list_btn theme_button"  id="switch"></button>
 
         </div>
 </div>
@@ -39,28 +39,28 @@
             mainPage.style.display = "block";
         }, 3000);
 
-        let count = 0;
-        const button = document.querySelector('.list_btn');
-        const background = document.querySelector('#main_page');
-        button.onclick = function change_bckg()
-        {
-            count++;
-            if(count == 1)
-            {
-                document.getElementById("spanHello").style.color = "white";
-                button.style.backgroundImage = "url(light.png)";
-                background.style.backgroundImage = "url(yt---tv.gif)";
-            }
-            else
-            if(count > 1)
-                {
-                    count = count - 2;
-                    document.getElementById("spanHello").style.color = "black";
-                    button.style.backgroundImage = "url(dark.png)";
-                    background.style.backgroundImage = "url(youtube_main.gif)";
-                }
+        // let count = 0;
+        // const button = document.querySelector('.list_btn');
+        // const background = document.querySelector('#main_page');
+        // button.onclick = function change_bckg()
+        // {
+        //     count++;
+        //     if(count == 1)
+        //     {
+        //         document.getElementById("spanHello").style.color = "white";
+        //         button.style.backgroundImage = "url(light.png)";
+        //         background.style.backgroundImage = "url(yt---tv.gif)";
+        //     }
+        //     else
+        //     if(count > 1)
+        //         {
+        //             count = count - 2;
+        //             document.getElementById("spanHello").style.color = "black";
+        //             button.style.backgroundImage = "url(dark.png)";
+        //             background.style.backgroundImage = "url(youtube_main.gif)";
+        //         }
             
-        };
+        // };
 
     </script>
     <script src="script_theme.js"></script>
