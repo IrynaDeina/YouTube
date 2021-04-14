@@ -95,6 +95,32 @@
 
 /*--SECOND PAGE--*/
 
+#second_page {
+  position: absolute;
+  top: 0;
+  background-position: center;
+  background-size: cover;
+  background-image: url("page-2-image.gif");
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+#second_page .goBack_btn {
+  position: absolute;
+  background-image: url("Youtube-Japan.png");
+  cursor: pointer;
+  top: 35px;
+  bottom: 35px;
+  right: 35px;
+  height: 53px;
+  width: 60px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15%;
+  border: none;
+}
+
 #second_page .tasks {
   text-align: center;
   display: block;
@@ -103,29 +129,61 @@
 
 #second_page .tasks li {
   list-style-type: none;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
-#second_page .tasksl li a {
+#second_page .tasks li a {
+  padding: 5px 15px;
   text-decoration: none;
-  color: black;
-}
-#second_page .tasks ul li a:hover {
-  color: red;
-}
-#second_page h2 {
-  font-weight: 700;
-  letter-spacing: 1px;
-  font-size: 2em;
-  color: maroon;
-  margin-bottom: 20px;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 15px;
+  border: 1px solid black;
 }
 
-#second_page.tasks:hover {
+#second_page .tasks ul li a:hover {
+  color: rgb(255, 255, 255);
+  background-color: black;
+  border-color: rgb(255, 255, 255);
+}
+#second_page .slide_left a {
+  padding: 10px 32px;
+}
+
+#second_page .slide_left2 a{
+  padding: 10px 25px;
+}
+
+#second_page .slide_right  a{
+  padding: 10px 20px;
+}
+
+#second_page .slide_left,
+#second_page .slide_left2{
+  transform: translateX(-1050px);
+}
+
+#second_page .slide_right {
+  transform: translateX(1000px);
+}
+
+#second_page h2 {
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  margin-bottom: 50px;
+}
+
+
+
+/* #second_page.tasks:hover {
   text-decoration: none;
   color: #000000;
   background-color: rgb(255, 255, 255);
   transition-duration: 0.8s;
-}
+} */
 
 .btn {
   text-decoration: none;

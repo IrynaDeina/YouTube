@@ -4,61 +4,16 @@
 <head>
     <meta charset="utf-8">
     <title>YouTube Analytics</title>
-    
+
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
 
     <style>
-        #second_page {
-            position: absolute;
-            top: 0;
-            background-position: center;
-            background-size: cover;
-            background-image: url("page-2-image.gif");
-            display: block;
-            height: 100%;
-            width: 100%;
-        }
-
-
-        body.dark #second_page{
+        body.dark #second_page {
             background-image: url("/yt---tv.gif");
 
         }
-
-        .list_btn,
-        .goBack_btn {
-            position: absolute;
-            cursor: pointer;
-            top: 35px;
-            right: 35px;
-            height: 53px;
-            width: 79px;
-            background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/YouTube_Red_Diamond_Play_Button.svg/1200px-YouTube_Red_Diamond_Play_Button.svg.png");
-            background-size: cover;
-            background-position: center;
-            border-radius: 15%;
-            border: none;
-        }
-
-        .goBack_btn {
-            bottom: 35px;
-            right: 35px;
-            width: 60px;
-            background-image: url("Youtube-Japan.png");
-        }
-        a
-        {
-            text-decoration: none;
-            color: maroon;
-            font-weight: bold;
-            background-color: pink;
-        }
-
-
-
-
     </style>
 </head>
 
@@ -68,19 +23,37 @@
         <div class="tasks">
             <h2>Оберіть задачу</h2>
             <ul>
-                <li>
+                <li class="slide_left">
                     <a href="index3.html">Відобразити глобальну інформацію про канал</a>
                 </li>
-                <li>
-                    <a href="index4.html">Порівняти глобальну інформацію про канали</a>
+                <li class="slide_right">
+                    <a href=" index4.html">Порівняти глобальну інформацію про канали</a>
                 </li>
-                <li>
-                    <a href="index5.html">Сортувати канали за їхніми даними</a>
+                <li class="slide_left2">
+                    <a href=" index5.html">Сортувати канали за їхніми даними</a>
                 </li>
             </ul>
         </div>
         <button class="goBack_btn" onclick="window.location.href = 'index.html'"></button>
+        <script>
+            const slide_left = document.querySelector('.slide_left');
+            const slide_left2 = document.querySelector('.slide_left2');
+            const slide_right = document.querySelector('.slide_right');
+            document.querySelector('body').onload = function () { slideFunction() };
 
+            setTimeout(function slideFunction() {
+                slide_left.style.transform = "translateX(0)";
+                slide_left.style.transitionDuration = "0.8s";
+
+                slide_left2.style.transform = "translateX(0)";
+                slide_left2.style.transitionDuration = "0.8s";
+
+                slide_right.style.transform = "translateX(0)";
+                slide_right.style.transitionDuration = "0.8s";
+            }, 1000);
+
+
+        </script>
 
         <script src="script_theme.js"></script>
 
