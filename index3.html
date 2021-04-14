@@ -12,7 +12,7 @@
 
 </head>
 
-<body onload="loadClient()">
+<body onload="loadClient(), Load()">
 
     <script src="https://apis.google.com/js/api.js"></script>
     <script>
@@ -91,7 +91,7 @@
         }
 
 
-        let channelID = document.getElementById("channelID");
+        /*let channelID = document.getElementById("channelID");
 
         if (sessionStorage.getItem("autosave"))
         { 
@@ -102,7 +102,53 @@
         {
             sessionStorage.setItem("autosave", channelID.value);
         });
+*/
 
+        function Save()
+        {
+        var elements = document.querySelectorAll('input');
+           
+            (function(element)
+            {
+                var id = element.getAttribute('id');
+                if(id == "save") return;
+                sessionStorage.setItem(id, element.value); // обязательно наличие у элементов id
+            })(elements);
+            
+        }
+
+        function Load()
+        {
+            var elements = document.querySelectorAll('input');
+                (function(element)
+                {
+                    var id = element.getAttribute('id');
+                    if(id == "save") return;
+                    element.value = sessionStorage.getItem(value); 
+                })(elements);
+            
+        }
+        
+        /*
+        var element = document.querySelectorAll('input');
+
+        function checkValidity() {};
+
+        for (i=0; i<element.length; i++) {
+
+        (function(element)
+        {
+            var id = element.getAttribute('id');
+
+            element.value = sessionStorage.getItem(id); 
+            
+            element.oninput = function()
+            {
+                sessionStorage.setItem(id, element.value);
+                checkValidity();
+            };
+            })(element[i]);
+        }*/
     </script>
 
     <div class="container">
@@ -111,11 +157,10 @@
             Введіть ID каналу:
         </span>
         <input type="text" id="channelID" class="channel-input">
-        <button onclick="execute()" class="btn">Показати</button>
+        <button onclick="execute(), Save()" class="btn" id="save">Показати</button>
 
     
-    <table id="infoTable" style="margin: 0 auto;"> 
-        <caption class="table-title">Інформація про канал</caption>
+    <table id="infoTable" style="margin: 0 auto;">
         <tr>
             <th>
                 Ім'я каналу

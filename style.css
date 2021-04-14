@@ -11,7 +11,7 @@
   background-size: cover;
   background-position: center;
   width: 100%;
-  background-image: url(/youtube_main.gif);
+  background-image: url(light.gif);
 }
 
 #main_page div#pre_load {
@@ -198,7 +198,7 @@
 }
 
 .btn--margin {
-  margin-left: 770px;
+  margin-left: 570px;
 }
 
 .arrows-btn {
@@ -324,7 +324,7 @@ body.dark .list_btn,
 }
 
 body.dark #main_page {
-  background-image: url(/yt---tv.gif);
+  background-image: url(dark.gif);
 }
 
 body.dark #main_page h1 span,
