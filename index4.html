@@ -76,7 +76,19 @@
       {
           let date = document.getElementById("date_of_create");
           console.log(date);
-          date.innerHTML = name;
+          var day = new Date(name).getDate();
+            var month = new Date(name).getMonth();
+            var year = new Date(name).getFullYear();
+
+            if(day < 10)
+            {
+                day = "0"+day;
+            }
+            if(month < 10)
+            {
+                month = "0"+month;
+            }
+            date.innerHTML = day+"."+month+"."+year;
       }
       function Subscriber(name)
       {
@@ -146,7 +158,20 @@
       {
           let date = document.getElementById("date_of_create2");
           console.log(date);
-          date.innerHTML = name;
+          
+          var day = new Date(name).getDate();
+            var month = new Date(name).getMonth();
+            var year = new Date(name).getFullYear();
+
+            if(day < 10)
+            {
+                day = "0"+day;
+            }
+            if(month < 10)
+            {
+                month = "0"+month;
+            }
+            date.innerHTML = day+"."+month+"."+year;
       }
       function Subscriber2(name)
       {
@@ -174,8 +199,8 @@
         <span class="input-title">
             Введіть ID каналів:
         </span>
-        <input type="text" id="channelID"  class="channel-input">
-        <input type="text" id="channelID2"  class="channel-input">
+        <input type="text" id="channelID"  class="channel-input" value="UClI9aidW3X044NeB4QS-yxw">
+        <input type="text" id="channelID2"  class="channel-input" value="UCmKurapML4BF9Bjtj4RbvXw">
         <button onclick="execute(), execute2()" class="btn">Показати</button>
     </div>
     <table id="infoTable" style="margin: 0 auto; text-align: center;">

@@ -28,6 +28,18 @@
 
     let firstArray = new Array();
     let secondArray = new Array();
+    
+    var f_title;
+    var f_date;
+    var f_subscriber;
+    var f_video;
+    var f_view;
+
+    var s_title;
+    var s_date;
+    var s_subscriber;
+    var s_video;
+    var s_view;
     function execute()
     {
         
@@ -61,49 +73,60 @@
                 firstArray.push(post.subscriber);
                 firstArray.push(post.video);
                 firstArray.push(post.view);
-
+               
+                f_title = firstArray[0];
+                f_date = firstArray[1];
+                f_subscriber = firstArray[2];
+                f_video = firstArray[3];
+                f_view = firstArray[4];
                 Title(post.title);
                 DateCreate(post.date);
                 Subscriber(post.subscriber);
                 Video(post.video);
                 View(post.view);
 
-                console.log("Response", response);
         },
             function(err) { console.error("Execute error", err); });
     }
       gapi.load("client:auth2", function() {
         gapi.auth2.init({client_id: "YOUR_CLIENT_ID"});
       });
-
+     
       function Title(name)
       {
           let title = document.getElementById("name_chanel");
-          console.log(title);
             title.innerHTML = name;
       }
       function DateCreate(name)
       {
           let date = document.getElementById("date_of_create");
-          console.log(date);
-          date.innerHTML = name;
+         var day = new Date(name).getDate();
+            var month = new Date(name).getMonth();
+            var year = new Date(name).getFullYear();
+
+            if(day < 10)
+            {
+                day = "0"+day;
+            }
+            if(month < 10)
+            {
+                month = "0"+month;
+            }
+            date.innerHTML = day+"."+month+"."+year;
       }
       function Subscriber(name)
       {
           let subscriber = document.getElementById("number_of_followers");
-          console.log(subscriber);
           subscriber.innerHTML = name;
       }
       function Video(name)
       {
           let video = document.getElementById("number_all_video");
-          console.log(video);
           video.innerHTML = name;
       }
       function View(name)
       {
           let view = document.getElementById("number_of_views");
-          console.log(view);
           view.innerHTML = name;
       }
       function execute2()
@@ -146,7 +169,12 @@
                 secondArray.push(post.video);
                 secondArray.push(post.view);
 
-                console.log("Response", response);
+                s_title = secondArray[0];
+                s_date = secondArray[1];
+                s_subscriber = secondArray[2];
+                s_video = secondArray[3];
+                s_view = secondArray[4];
+
         },
             function(err) { console.error("Execute error", err); });
     }
@@ -157,39 +185,264 @@
       function Title2(name)
       {
           let title = document.getElementById("name_chanel2");
-          console.log(title);
-            title.innerHTML = name;
+        title.innerHTML = name;
       }
       function DateCreate2(name)
       {
           let date = document.getElementById("date_of_create2");
-          console.log(date);
-          date.innerHTML = name;
+          var day = new Date(name).getDate();
+            var month = new Date(name).getMonth();
+            var year = new Date(name).getFullYear();
+
+            if(day < 10)
+            {
+                day = "0"+day;
+            }
+            if(month < 10)
+            {
+                month = "0"+month;
+            }
+            date.innerHTML = day+"."+month+"."+year;
       }
       function Subscriber2(name)
       {
           let subscriber = document.getElementById("number_of_followers2");
-          console.log(subscriber);
           subscriber.innerHTML = name;
       }
       function Video2(name)
       {
           let video = document.getElementById("number_all_video2");
-          console.log(video);
           video.innerHTML = name;
       }
       function View2(name)
       {
           let view = document.getElementById("number_of_views2");
-          console.log(view);
           view.innerHTML = name;
       }
+   
 
-    
+    function followersTop()
+    {
+        if(s_subscriber > f_subscriber)
+        {
+            console.log(s_subscriber +">"+f_subscriber);
+
+            Title(s_title);
+            DateCreate(s_date);
+            Subscriber(s_subscriber);
+            Video(s_video);
+            View(s_view);
+
+            Title2(f_title);
+            DateCreate2(f_date);
+            Subscriber2(f_subscriber);
+            Video2(f_video);
+            View2(f_view);
+        }
+        else
+            if(f_subscriber > s_subscriber)
+            {
+                console.log(f_subscriber +">"+s_subscriber);
+                Title(f_title);
+                DateCreate(f_date);
+                Subscriber(f_subscriber);
+                Video(f_video);
+                View(f_view);
+
+                Title2(s_title);
+                DateCreate2(s_date);
+                Subscriber2(s_subscriber);
+                Video2(s_video);
+                View2(s_view);
+            }
+      }
+      
+      function followersBottom()
+      {
+        if(f_subscriber < s_subscriber)
+        {
+            console.log(f_subscriber +"<"+s_subscriber);
+            Title(f_title);
+            DateCreate(f_date);
+            Subscriber(f_subscriber);
+            Video(f_video);
+            View(f_view);
+            
+            Title2(s_title);
+            DateCreate2(s_date);
+            Subscriber2(s_subscriber);
+            Video2(s_video);
+            View2(s_view);
+        }
+        else
+            if(s_subscriber < f_subscriber)
+            {
+                console.log(s_subscriber +"<"+f_subscriber);
+                Title(s_title);
+                DateCreate(s_date);
+                Subscriber(s_subscriber);
+                Video(s_video);
+                View(s_view);
+
+                Title2(f_title);
+                DateCreate2(f_date);
+                Subscriber2(f_subscriber);
+                Video2(f_video);
+                View2(f_view);
+            }
+      }
+
+      function videoTop()
+    {
+        if(s_video > f_video)
+        {
+            console.log(s_video +">"+f_video);
+
+            Title(s_title);
+            DateCreate(s_date);
+            Subscriber(s_subscriber);
+            Video(s_video);
+            View(s_view);
+
+            Title2(f_title);
+            DateCreate2(f_date);
+            Subscriber2(f_subscriber);
+            Video2(f_video);
+            View2(f_view);
+        }
+        else
+            if(f_video > s_video)
+            {
+                console.log(f_video +">"+s_video);
+                Title(f_title);
+                DateCreate(f_date);
+                Subscriber(f_subscriber);
+                Video(f_video);
+                View(f_view);
+
+                Title2(s_title);
+                DateCreate2(s_date);
+                Subscriber2(s_subscriber);
+                Video2(s_video);
+                View2(s_view);
+            }
+      }
+      
+      function videoBottom()
+      {
+        if(f_video < s_video)
+        {
+            console.log(f_video +"<"+s_video);
+            Title(f_title);
+            DateCreate(f_date);
+            Subscriber(f_subscriber);
+            Video(f_video);
+            View(f_view);
+            
+            Title2(s_title);
+            DateCreate2(s_date);
+            Subscriber2(s_subscriber);
+            Video2(s_video);
+            View2(s_view);
+        }
+        else
+            if(s_video < f_video)
+            {
+                console.log(s_video +"<"+f_video);
+                Title(s_title);
+                DateCreate(s_date);
+                Subscriber(s_subscriber);
+                Video(s_video);
+                View(s_view);
+
+                Title2(f_title);
+                DateCreate2(f_date);
+                Subscriber2(f_subscriber);
+                Video2(f_video);
+                View2(f_view);
+            }
+      }
+      function viewTop()
+    {
+        if(s_view > f_view)
+        {
+            console.log(s_view +">"+f_view);
+
+            Title(s_title);
+            DateCreate(s_date);
+            Subscriber(s_subscriber);
+            Video(s_video);
+            View(s_view);
+
+            Title2(f_title);
+            DateCreate2(f_date);
+            Subscriber2(f_subscriber);
+            Video2(f_video);
+            View2(f_view);
+        }
+        else
+            if(f_view > s_view)
+            {
+                console.log(f_view +">"+s_view);
+                Title(f_title);
+                DateCreate(f_date);
+                Subscriber(f_subscriber);
+                Video(f_video);
+                View(f_view);
+
+                Title2(s_title);
+                DateCreate2(s_date);
+                Subscriber2(s_subscriber);
+                Video2(s_video);
+                View2(s_view);
+            }
+      }
+      
+      function viewBottom()
+      {
+        if(f_view < s_view)
+        {
+            console.log(f_view +"<"+s_view);
+            Title(f_title);
+            DateCreate(f_date);
+            Subscriber(f_subscriber);
+            Video(f_video);
+            View(f_view);
+            
+            Title2(s_title);
+            DateCreate2(s_date);
+            Subscriber2(s_subscriber);
+            Video2(s_video);
+            View2(s_view);
+        }
+        else
+            if(s_view < f_view)
+            {
+                console.log(s_view +"<"+f_view);
+                Title(s_title);
+                DateCreate(s_date);
+                Subscriber(s_subscriber);
+                Video(s_video);
+                View(s_view);
+
+                Title2(f_title);
+                DateCreate2(f_date);
+                Subscriber2(f_subscriber);
+                Video2(f_video);
+                View2(f_view);
+            }
+      }
+      /*
       function followersTop()
       {
-        if(firstArray[2] < secondArray[2])
+        if(secondArray[2] > firstArray[2])
         {
+            console.log("2 top");
+
+            console.log(secondArray[2]);
+            console.log(firstArray[2]);
+           
+
             Title(secondArray[0]);
             DateCreate(secondArray[1]);
             Subscriber(secondArray[2]);
@@ -203,16 +456,21 @@
             View2(firstArray[4]);
         }
       }
+
       function followersBottom()
       {
-        if(firstArray[2] < secondArray[2])
+        if(secondArray[2] > firstArray[2])
         {
+            console.log("2 bottom");
+            console.log(firstArray[2]);
+            console.log(secondArray[2]);
+
             Title(firstArray[0]);
             DateCreate(firstArray[1]);
             Subscriber(firstArray[2]);
             Video(firstArray[3]);
             View(firstArray[4]);
-
+            
             Title2(secondArray[0]);
             DateCreate2(secondArray[1]);
             Subscriber2(secondArray[2]);
@@ -220,6 +478,7 @@
             View2(secondArray[4]);
         }
       }
+*/
       function videoTop()
       {
         if(firstArray[3] < secondArray[3])
@@ -236,6 +495,21 @@
             Video2(secondArray[3]);
             View2(secondArray[4]);
         }
+        else
+            if(firstArray[3] > secondArray[3])
+            {
+                Title(secondArray[0]);
+                DateCreate(secondArray[1]);
+                Subscriber(secondArray[2]);
+                Video(secondArray[3]);
+                View(secondArray[4]);
+
+                Title2(firstArray[0]);
+                DateCreate2(firstArray[1]);
+                Subscriber2(firstArray[2]);
+                Video2(firstArray[3]);
+                View2(firstArray[4]);
+            }
       }
 
       function videoBottom()
@@ -254,10 +528,26 @@
             Video2(firstArray[3]);
             View2(firstArray[4]);
         }
+        else
+            if(firstArray[3] > secondArray[3])
+            {
+                Title(firstArray[0]);
+                DateCreate(firstArray[1]);
+                Subscriber(firstArray[2]);
+                Video(firstArray[3]);
+                View(firstArray[4]);
+                
+                Title2(secondArray[0]);
+                DateCreate2(secondArray[1]);
+                Subscriber2(secondArray[2]);
+                Video2(secondArray[3]);
+                View2(secondArray[4]);
+
+            }
       }
-     function viewTop()
+      function viewTop()
       {
-        if(firstArray[4] < secondArray[4])
+        if(firstArray[4] <  secondArray[4])
         {
             Title(firstArray[0]);
             DateCreate(firstArray[1]);
@@ -271,8 +561,23 @@
             Video2(secondArray[3]);
             View2(secondArray[4]);
         }
+        else
+            if(firstArray[4] > secondArray[4])
+            {
+                Title(secondArray[0]);
+                DateCreate(secondArray[1]);
+                Subscriber(secondArray[2]);
+                Video(secondArray[3]);
+                View(secondArray[4]);
+
+                Title2(firstArray[0]);
+                DateCreate2(firstArray[1]);
+                Subscriber2(firstArray[2]);
+                Video2(firstArray[3]);
+                View2(firstArray[4]);
+            }
       }
-      
+
       function viewBottom()
       {
         if(firstArray[4] < secondArray[4])
@@ -289,7 +594,24 @@
             Video2(firstArray[3]);
             View2(firstArray[4]);
         }
+        else
+            if(firstArray[4] > secondArray[4])
+            {
+                Title(firstArray[0]);
+                DateCreate(firstArray[1]);
+                Subscriber(firstArray[2]);
+                Video(firstArray[3]);
+                View(firstArray[4]);
+                
+                Title2(secondArray[0]);
+                DateCreate2(secondArray[1]);
+                Subscriber2(secondArray[2]);
+                Video2(secondArray[3]);
+                View2(secondArray[4]);
+
+            }
       }
+
     </script>
     
     <div class="compare">
@@ -297,8 +619,8 @@
             Введіть ID каналів:
         </span>
 
-        <input type="text" id="channelID" class="channel-input">
-        <input type="text" id="channelID2" class="channel-input">
+        <input type="text" id="channelID" class="channel-input" value="UClI9aidW3X044NeB4QS-yxw">
+        <input type="text" id="channelID2" class="channel-input" value="UCmKurapML4BF9Bjtj4RbvXw">
 
         <button onclick="execute(), execute2()" class="btn">Показати</button>
 

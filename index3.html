@@ -49,12 +49,13 @@
                     }
                     //id for example UClI9aidW3X044NeB4QS-yxw
                    
-                   
                     Title(post.title);
                     DateCreate(post.date);
                     Subscriber(post.subscriber);
                     Video(post.video);
                     View(post.view);
+
+                    DateConvert(post.date);
 
                     console.log("Response", response);
                 },
@@ -72,7 +73,20 @@
         function DateCreate(name) {
             let date = document.getElementById("date_of_create");
             console.log(date);
-            date.innerHTML = name;
+
+            var day = new Date(name).getDate();
+            var month = new Date(name).getMonth();
+            var year = new Date(name).getFullYear();
+
+            if(day < 10)
+            {
+                day = "0"+day;
+            }
+            if(month < 10)
+            {
+                month = "0"+month;
+            }
+            date.innerHTML = day+"."+month+"."+year;
         }
         function Subscriber(name) {
             let subscriber = document.getElementById("number_of_followers");
@@ -90,6 +104,13 @@
             view.innerHTML = name;
         }
 
+        function DateConvert(date)
+        {
+            
+            var day = new Date(date).getDate();
+            var month = new Date(date).getMonth();
+            var year = new Date(date).getFullYear();
+        }
 
         /*let channelID = document.getElementById("channelID");
 
@@ -156,7 +177,7 @@
         <span class="input-title">
             Введіть ID каналу:
         </span>
-        <input type="text" id="channelID" class="channel-input">
+        <input type="text" id="channelID" class="channel-input" value="UClI9aidW3X044NeB4QS-yxw"> 
         <button onclick="execute(), Save()" class="btn" id="save">Показати</button>
 
     
